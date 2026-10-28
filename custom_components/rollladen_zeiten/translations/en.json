@@ -1,0 +1,147 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Shutter Times",
+        "description": "Creates an instance (as many as you like, e.g. per façade). Sun position, offset and earliest/latest limits are set afterwards as entities of the device.\n\n[Documentation (README)]({docs_url})",
+        "data": {
+          "name": "Name",
+          "weekend_days": "Weekend days",
+          "free_calendars": "Calendars for days off",
+          "device_type": "Device type"
+        },
+        "data_description": {
+          "weekend_days": "On these weekdays the “Earliest time up WE/DO” applies (WE = weekend, DO = days off).",
+          "free_calendars": "Optional. If any of these calendars has an event today (holiday, vacation, shift …), the weekend/days-off time applies as well. Any number of calendars.",
+          "device_type": "Shutter/blind or awning: only changes the names of the time limits (“Earliest time up” vs. “Earliest time automation”, “… down” vs. “… retract”)."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "is_day": {
+        "name": "Day",
+        "state": {
+          "on": "Yes",
+          "off": "No"
+        }
+      },
+      "free_day": {
+        "name": "Day off",
+        "state": {
+          "on": "Yes",
+          "off": "No"
+        }
+      }
+    },
+    "sensor": {
+      "day_night": {
+        "name": "Day/Night",
+        "state": {
+          "day": "Day",
+          "night": "Night"
+        }
+      },
+      "morning": {
+        "name": "Morning time"
+      },
+      "evening": {
+        "name": "Evening time"
+      },
+      "morning_timestamp": {
+        "name": "Morning time (timestamp)"
+      },
+      "evening_timestamp": {
+        "name": "Evening time (timestamp)"
+      }
+    },
+    "select": {
+      "morning_preset": {
+        "name": "Sunrise",
+        "state": {
+          "sunrise": "Horizon (-0.83°)",
+          "civil": "Civil (-6°)",
+          "nautical": "Nautical (-12°)",
+          "astronomical": "Astronomical (-18°)",
+          "off": "Off (time only)"
+        }
+      },
+      "evening_preset": {
+        "name": "Sunset",
+        "state": {
+          "sunrise": "Horizon (-0.83°)",
+          "civil": "Civil (-6°)",
+          "nautical": "Nautical (-12°)",
+          "astronomical": "Astronomical (-18°)",
+          "off": "Off (time only)"
+        }
+      }
+    },
+    "number": {
+      "morning_offset": {
+        "name": "Sunrise offset"
+      },
+      "evening_offset": {
+        "name": "Sunset offset"
+      }
+    },
+    "time": {
+      "earliest_morning": {
+        "name": "Earliest time up"
+      },
+      "earliest_morning_free": {
+        "name": "Earliest time up WE/DO"
+      },
+      "latest_evening": {
+        "name": "Latest time down"
+      },
+      "earliest_morning_awning": {
+        "name": "Earliest time automation"
+      },
+      "earliest_morning_free_awning": {
+        "name": "Earliest time automation WE/DO"
+      },
+      "latest_evening_awning": {
+        "name": "Latest time retract"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Days off",
+        "data": {
+          "weekend_days": "Weekend days",
+          "free_calendars": "Calendars for days off",
+          "device_type": "Device type"
+        },
+        "data_description": {
+          "weekend_days": "On these weekdays the “Earliest time up WE/DO” applies (WE = weekend, DO = days off).",
+          "free_calendars": "Optional. If any of these calendars has an event today (holiday, vacation, shift …), the weekend/days-off time applies as well. Any number of calendars.",
+          "device_type": "Shutter/blind or awning: only changes the names of the time limits (“Earliest time up” vs. “Earliest time automation”, “… down” vs. “… retract”)."
+        },
+        "description": "Change device type, weekend days and calendars for days off.\n\n[Documentation (README)]({docs_url})"
+      }
+    }
+  },
+  "selector": {
+    "weekday": {
+      "options": {
+        "mon": "Monday",
+        "tue": "Tuesday",
+        "wed": "Wednesday",
+        "thu": "Thursday",
+        "fri": "Friday",
+        "sat": "Saturday",
+        "sun": "Sunday"
+      }
+    },
+    "device_type": {
+      "options": {
+        "shutter": "Shutter / blind",
+        "awning": "Awning"
+      }
+    }
+  }
+}

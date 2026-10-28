@@ -1,0 +1,147 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rollladen Zeiten",
+        "description": "Legt eine Instanz an (beliebig oft möglich, z. B. je Himmelsrichtung). Sonnenstand, Offset und Früh-/Spät-Grenzen stellst du danach als Entitäten des Geräts ein.\n\n[Dokumentation (README)]({docs_url})",
+        "data": {
+          "name": "Name",
+          "weekend_days": "Wochenendtage",
+          "free_calendars": "Kalender für freie Tage",
+          "device_type": "Gerätetyp"
+        },
+        "data_description": {
+          "weekend_days": "An diesen Wochentagen gilt die „Zeit frühestens hoch WE/FT“ (WE = Wochenende, FT = Freie Tage).",
+          "free_calendars": "Optional. Hat einer dieser Kalender heute einen Termin (Feiertag, Urlaub, Schichtdienst …), gilt ebenfalls die Wochenend-/Feiertagszeit. Beliebig viele Kalender möglich.",
+          "device_type": "Rollo/Jalousie oder Markise: bestimmt nur die Bezeichnung der Zeitgrenzen („Zeit frühestens hoch“ bzw. „Zeit frühestens Automatik“, „… runter“ bzw. „… einfahren“)."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "is_day": {
+        "name": "Tag",
+        "state": {
+          "on": "Ja",
+          "off": "Nein"
+        }
+      },
+      "free_day": {
+        "name": "Freier Tag",
+        "state": {
+          "on": "Ja",
+          "off": "Nein"
+        }
+      }
+    },
+    "sensor": {
+      "day_night": {
+        "name": "Tag/Nacht",
+        "state": {
+          "day": "Tag",
+          "night": "Nacht"
+        }
+      },
+      "morning": {
+        "name": "Fahrzeit morgens"
+      },
+      "evening": {
+        "name": "Fahrzeit abends"
+      },
+      "morning_timestamp": {
+        "name": "Fahrzeit morgens (Zeitstempel)"
+      },
+      "evening_timestamp": {
+        "name": "Fahrzeit abends (Zeitstempel)"
+      }
+    },
+    "select": {
+      "morning_preset": {
+        "name": "Sonnenaufgang",
+        "state": {
+          "sunrise": "Horizont (-0,83°)",
+          "civil": "Bürgerlich (-6°)",
+          "nautical": "Nautisch (-12°)",
+          "astronomical": "Astronomisch (-18°)",
+          "off": "Aus (nur Zeit)"
+        }
+      },
+      "evening_preset": {
+        "name": "Sonnenuntergang",
+        "state": {
+          "sunrise": "Horizont (-0,83°)",
+          "civil": "Bürgerlich (-6°)",
+          "nautical": "Nautisch (-12°)",
+          "astronomical": "Astronomisch (-18°)",
+          "off": "Aus (nur Zeit)"
+        }
+      }
+    },
+    "number": {
+      "morning_offset": {
+        "name": "Sonnenaufgang-Offset"
+      },
+      "evening_offset": {
+        "name": "Sonnenuntergang-Offset"
+      }
+    },
+    "time": {
+      "earliest_morning": {
+        "name": "Zeit frühestens hoch"
+      },
+      "earliest_morning_free": {
+        "name": "Zeit frühestens hoch WE/FT"
+      },
+      "latest_evening": {
+        "name": "Zeit spätestens runter"
+      },
+      "earliest_morning_awning": {
+        "name": "Zeit frühestens Automatik"
+      },
+      "earliest_morning_free_awning": {
+        "name": "Zeit frühestens Automatik WE/FT"
+      },
+      "latest_evening_awning": {
+        "name": "Zeit spätestens einfahren"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Freie Tage",
+        "data": {
+          "weekend_days": "Wochenendtage",
+          "free_calendars": "Kalender für freie Tage",
+          "device_type": "Gerätetyp"
+        },
+        "data_description": {
+          "weekend_days": "An diesen Wochentagen gilt die „Zeit frühestens hoch WE/FT“ (WE = Wochenende, FT = Freie Tage).",
+          "free_calendars": "Optional. Hat einer dieser Kalender heute einen Termin (Feiertag, Urlaub, Schichtdienst …), gilt ebenfalls die Wochenend-/Feiertagszeit. Beliebig viele Kalender möglich.",
+          "device_type": "Rollo/Jalousie oder Markise: bestimmt nur die Bezeichnung der Zeitgrenzen („Zeit frühestens hoch“ bzw. „Zeit frühestens Automatik“, „… runter“ bzw. „… einfahren“)."
+        },
+        "description": "Gerätetyp, Wochenendtage und Kalender für freie Tage ändern.\n\n[Dokumentation (README)]({docs_url})"
+      }
+    }
+  },
+  "selector": {
+    "weekday": {
+      "options": {
+        "mon": "Montag",
+        "tue": "Dienstag",
+        "wed": "Mittwoch",
+        "thu": "Donnerstag",
+        "fri": "Freitag",
+        "sat": "Samstag",
+        "sun": "Sonntag"
+      }
+    },
+    "device_type": {
+      "options": {
+        "shutter": "Rollo / Jalousie",
+        "awning": "Markise"
+      }
+    }
+  }
+}
