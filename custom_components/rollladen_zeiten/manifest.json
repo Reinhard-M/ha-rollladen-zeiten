@@ -5,9 +5,6 @@
     "frontend",
     "http"
   ],
-  "categories": [
-    "blinds_curtains"
-  ],
   "codeowners": [
     "@Reinhard-M"
   ],
