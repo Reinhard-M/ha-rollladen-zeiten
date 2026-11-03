@@ -7,6 +7,29 @@
 Berechnet aus dem Sonnenstand **Tag/Nacht** sowie die **Fahrzeiten für Morgen und Abend**, berücksichtigt dabei **freie Tage** (Wochenende, Feiertage, Urlaub, Schichtdienst) und liefert alles als Entitäten für Automationen und die Integration **Rollladen Steuerung**.
 Beliebig oft instanziierbar (Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“), z. B. je eine Instanz für Süd-, Ost- und Nordseite. Beim Anlegen werden nur Name, Gerätetyp, Wochenendtage und Kalender gewählt, **alle Einstellungen sind danach Entitäten des Geräts** (Dashboard-tauglich, bleiben nach Neustart erhalten). Standort und Zeitzone kommen aus den HA-Grundeinstellungen.
 
+## Installation
+
+### Über den Marketplace / HACS (empfohlen)
+
+**Home Assistant 2026.11 oder neuer:** HACS ist als **Marketplace** fest eingebaut.
+
+1. **Einstellungen → Marketplace** öffnen und nach „Rollladen Zeiten“ suchen.
+2. Installieren und einrichten (Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“). Ist ein Neustart nötig, meldet sich Home Assistant.
+
+[![Öffne deine Home-Assistant-Instanz und zeige ein Repository im Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=Reinhard-M&repository=ha-rollladen-zeiten&category=integration)
+
+**Ältere Home-Assistant-Versionen mit HACS:**
+
+1. HACS öffnen und nach „Rollladen Zeiten“ suchen.
+2. **Herunterladen** anklicken, Home Assistant **neu starten**.
+3. Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“.
+
+Taucht die Integration in der Suche nicht auf, füge sie als benutzerdefiniertes Repository hinzu (`https://github.com/Reinhard-M/ha-rollladen-zeiten`, Kategorie **Integration**): im Marketplace über **Über Link hinzufügen** (oben rechts) oder Menü (⋮) → **Benutzerdefinierte Repositorys**, in HACS über Menü (⋮) → **Benutzerdefinierte Repositories**.
+
+### Manuell
+
+Ordner `custom_components/rollladen_zeiten` aus diesem Repository nach `/config/custom_components/` kopieren, Home Assistant **neu starten**. Die Integration ist als Dienst (`integration_type: service`) deklariert und erscheint unter **Einstellungen → Geräte & Dienste → Integrationen** als eine Karte „Rollladen Zeiten“ mit allen Instanzen; jede Instanz ist ein Gerät mit allen Entitäten.
+
 ## Einrichtung (beim Anlegen der Instanz)
 
 Nur der **Name** ist **Pflicht**. Alles andere ist **optional** bzw. hat eine Vorgabe und lässt sich später über „Konfigurieren“ ändern.
@@ -124,29 +147,6 @@ show_seconds: true           # false = nur HH:MM
 editable: true               # false = Einstellungsspalten nur anzeigen
 show_help: true              # Symbol ? mit Link zu dieser Dokumentation
 ```
-
-## Installation
-
-### Über den Marketplace / HACS (empfohlen)
-
-[![Öffne deine Home-Assistant-Instanz und zeige ein Repository im Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=Reinhard-M&repository=ha-rollladen-zeiten&category=integration)
-
-**Home Assistant 2026.11 oder neuer:** HACS ist als **Marketplace** fest eingebaut.
-
-1. **Einstellungen → Marketplace** öffnen und nach „Rollladen Zeiten“ suchen.
-2. Installieren und einrichten (Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“). Ist ein Neustart nötig, meldet sich Home Assistant.
-
-**Ältere Home-Assistant-Versionen mit HACS:**
-
-1. HACS öffnen und nach „Rollladen Zeiten“ suchen.
-2. **Herunterladen** anklicken, Home Assistant **neu starten**.
-3. Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“.
-
-Taucht die Integration in der Suche nicht auf, füge sie als benutzerdefiniertes Repository hinzu (`https://github.com/Reinhard-M/ha-rollladen-zeiten`, Kategorie **Integration**): im Marketplace über **Über Link hinzufügen** (oben rechts) oder Menü (⋮) → **Benutzerdefinierte Repositorys**, in HACS über Menü (⋮) → **Benutzerdefinierte Repositories**.
-
-### Manuell
-
-Ordner `custom_components/rollladen_zeiten` aus diesem Repository nach `/config/custom_components/` kopieren, Home Assistant **neu starten**. Die Integration ist als Dienst (`integration_type: service`) deklariert und erscheint unter **Einstellungen → Geräte & Dienste → Integrationen** als eine Karte „Rollladen Zeiten“ mit allen Instanzen; jede Instanz ist ein Gerät mit allen Entitäten.
 
 ## Hilfe
 

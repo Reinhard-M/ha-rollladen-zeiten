@@ -9,6 +9,29 @@ Can be instantiated any number of times (Settings → Devices & services → Add
 
 > Note: entity names and the card are localized in German and English.
 
+## Installation
+
+### Via the Marketplace / HACS (recommended)
+
+**Home Assistant 2026.11 or newer:** HACS is built in as the **Marketplace**.
+
+1. Open **Settings → Marketplace** and search for "Rollladen Zeiten".
+2. Install it and set it up (Settings → Devices & services → Add integration → "Rollladen Zeiten"). If a restart is needed, Home Assistant tells you.
+
+[![Open your Home Assistant instance and open a repository in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=Reinhard-M&repository=ha-rollladen-zeiten&category=integration)
+
+**Older Home Assistant versions with HACS:**
+
+1. Open HACS and search for "Rollladen Zeiten".
+2. Click **Download**, then **restart** Home Assistant.
+3. Settings → Devices & services → Add integration → "Rollladen Zeiten".
+
+If the integration does not show up in the search, add it as a custom repository (`https://github.com/Reinhard-M/ha-rollladen-zeiten`, category **Integration**): in the Marketplace via **Add from link** (top right) or menu (⋮) → **Custom repositories**, in HACS via menu (⋮) → **Custom repositories**.
+
+### Manual
+
+Copy the folder `custom_components/rollladen_zeiten` from this repository to `/config/custom_components/` and **restart** Home Assistant. The integration is declared as a service (`integration_type: service`) and appears under **Settings → Devices & services → Integrations** as one card "Rollladen Zeiten" with all instances; each instance is a device with all its entities.
+
 ## Setup (when adding the instance)
 
 Only the **name** is **mandatory**. Everything else is **optional** or has a default and can be changed later via "Configure".
@@ -128,29 +151,6 @@ show_seconds: true           # false = HH:MM only
 editable: true               # false = show settings columns read-only
 show_help: true              # "?" icon linking to this documentation
 ```
-
-## Installation
-
-### Via the Marketplace / HACS (recommended)
-
-[![Open your Home Assistant instance and open a repository in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=Reinhard-M&repository=ha-rollladen-zeiten&category=integration)
-
-**Home Assistant 2026.11 or newer:** HACS is built in as the **Marketplace**.
-
-1. Open **Settings → Marketplace** and search for "Rollladen Zeiten".
-2. Install it and set it up (Settings → Devices & services → Add integration → "Rollladen Zeiten"). If a restart is needed, Home Assistant tells you.
-
-**Older Home Assistant versions with HACS:**
-
-1. Open HACS and search for "Rollladen Zeiten".
-2. Click **Download**, then **restart** Home Assistant.
-3. Settings → Devices & services → Add integration → "Rollladen Zeiten".
-
-If the integration does not show up in the search, add it as a custom repository (`https://github.com/Reinhard-M/ha-rollladen-zeiten`, category **Integration**): in the Marketplace via **Add from link** (top right) or menu (⋮) → **Custom repositories**, in HACS via menu (⋮) → **Custom repositories**.
-
-### Manual
-
-Copy the folder `custom_components/rollladen_zeiten` from this repository to `/config/custom_components/` and **restart** Home Assistant. The integration is declared as a service (`integration_type: service`) and appears under **Settings → Devices & services → Integrations** as one card "Rollladen Zeiten" with all instances; each instance is a device with all its entities.
 
 ## Help
 
