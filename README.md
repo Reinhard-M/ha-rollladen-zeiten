@@ -4,8 +4,14 @@
 
 ![Karte Rollladen Zeiten](docs/karte.png)
 
-Berechnet aus dem Sonnenstand **Tag/Nacht** sowie die **Fahrzeiten für Morgen und Abend**, berücksichtigt dabei **freie Tage** (Wochenende, Feiertage, Urlaub, Schichtdienst) und liefert alles als Entitäten für Automationen und die Integration **Rollladen Steuerung**.
-Beliebig oft instanziierbar (Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“), z. B. je eine Instanz für Süd-, Ost- und Nordseite. Beim Anlegen werden nur Name, Gerätetyp, Wochenendtage und Kalender gewählt, **alle Einstellungen sind danach Entitäten des Geräts** (Dashboard-tauglich, bleiben nach Neustart erhalten). Standort und Zeitzone kommen aus den HA-Grundeinstellungen.
+Mit dieser Integration werden ein Sensor für Tag/Nacht und 2 Sensoren für die Fahrzeiten morgens und abends zur Verfügung gestellt. Die Fahrzeiten sind synchron zum Tag/Nacht Sensor. Beeinflussen lassen sie sich durch
+
+- den Sonnenstand
+- feste Uhrzeiten
+
+Für die morgendliche Fahrzeit können 2 unterschiedliche Zeiten definiert werden, Werktags und Wochenende bzw. freie Tage. Die Unterscheidung basiert auf einer Wochentagsauswahl (selektierbar) sowie Kalender (z.B. Feiertage, Ferien, Schichtpläne).
+
+Alles wird als Entität für Automationen und die Integration [„Rollladen Steuerung“](https://github.com/Reinhard-M/ha-rollladen-steuerung) geliefert. Beliebig oft instanziierbar (Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“), z. B. je eine Instanz für Süd-, Ost- und Nordseite. Beim Anlegen werden nur Name, Gerätetyp, Wochenendtage und Kalender gewählt, alle Einstellungen sind danach Entitäten des Geräts (Dashboard-tauglich, bleiben nach Neustart erhalten). Standort und Zeitzone kommen aus den HA-Grundeinstellungen.
 
 ## Installation
 
