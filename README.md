@@ -129,6 +129,8 @@ show_help: true              # Symbol ? mit Link zu dieser Dokumentation
 
 ### Über den Marketplace / HACS (empfohlen)
 
+[![Öffne deine Home-Assistant-Instanz und zeige ein Repository im Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=Reinhard-M&repository=ha-rollladen-zeiten&category=integration)
+
 **Home Assistant 2026.11 oder neuer:** HACS ist als **Marketplace** fest eingebaut.
 
 1. **Einstellungen → Marketplace** öffnen und nach „Rollladen Zeiten“ suchen.

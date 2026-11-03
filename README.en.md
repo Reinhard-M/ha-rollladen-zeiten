@@ -133,6 +133,8 @@ show_help: true              # "?" icon linking to this documentation
 
 ### Via the Marketplace / HACS (recommended)
 
+[![Open your Home Assistant instance and open a repository in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=Reinhard-M&repository=ha-rollladen-zeiten&category=integration)
+
 **Home Assistant 2026.11 or newer:** HACS is built in as the **Marketplace**.
 
 1. Open **Settings → Marketplace** and search for "Rollladen Zeiten".
