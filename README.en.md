@@ -4,10 +4,14 @@
 
 ![Rollladen Zeiten card](docs/karte.png)
 
-Calculates **day/night** from the sun position and the **drive times for morning and evening**, takes **days off** (weekend, public holidays, vacation, shift work) into account and provides everything as entities for automations and for the **Rollladen Steuerung** integration.
-Can be instantiated any number of times (Settings → Devices & services → Add integration → "Rollladen Zeiten"), e.g. one instance each for the south, east and north side. When adding an instance you only choose name, device type, weekend days and calendars; **all settings are entities of the device afterwards** (dashboard friendly, kept across restarts). Location and time zone come from the HA general settings.
+This integration provides one sensor for day/night and two sensors for the morning and evening drive times. The drive times are synchronous with the day/night sensor. They can be influenced by
 
-> Note: entity names and the card are localized in German and English.
+- the sun position
+- fixed times
+
+For the morning drive time two different times can be defined: workdays, and weekend or days off. The distinction is based on a selectable choice of weekdays and on calendars (e.g. public holidays, vacation, shift schedules).
+
+Everything is provided as entities for automations and for the ["Rollladen Steuerung"](https://github.com/Reinhard-M/ha-rollladen-steuerung) integration. The integration can be instantiated any number of times (Settings → Devices & services → Add integration → "Rollladen Zeiten"), e.g. one instance each for the south, east and north side. When adding an instance you only choose name, device type, weekend days and calendars; all settings are entities of the device afterwards (dashboard friendly, kept across restarts). Location and time zone come from the HA general settings.
 
 ## Installation
 
