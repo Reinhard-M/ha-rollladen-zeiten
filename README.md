@@ -11,7 +11,7 @@ Mit dieser Integration werden ein Sensor für Tag/Nacht und 2 Sensoren für die 
 
 Für die morgendliche Fahrzeit können 2 unterschiedliche Zeiten definiert werden, Werktags und Wochenende bzw. freie Tage. Die Unterscheidung basiert auf einer Wochentagsauswahl (selektierbar) sowie Kalender (z.B. Feiertage, Ferien, Schichtpläne).
 
-Alles wird als Entität für Automationen und die Integration [„Rollladen Steuerung“](https://github.com/Reinhard-M/ha-rollladen-steuerung) geliefert. Beliebig oft instanziierbar (Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“), z. B. je eine Instanz für Süd-, Ost- und Nordseite. Beim Anlegen werden nur Name, Gerätetyp, Wochenendtage und Kalender gewählt, alle Einstellungen sind danach Entitäten des Geräts (Dashboard-tauglich, bleiben nach Neustart erhalten). Standort und Zeitzone kommen aus den HA-Grundeinstellungen.
+Alles wird als Entität für Automationen und die Integration [„Rollladen Steuerung“](https://github.com/Reinhard-M/ha-rollladen-steuerung) geliefert und beliebig oft instanziierbar (Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“), z. B. je eine Instanz für Süd-, Ost- und Nordseite. Beim Anlegen werden nur Name, Gerätetyp, Wochenendtage und Kalender gewählt, alle Einstellungen sind danach Entitäten des Geräts (Dashboard-tauglich, bleiben nach Neustart erhalten). Standort und Zeitzone kommen aus den HA-Grundeinstellungen.
 
 ## Installation
 
