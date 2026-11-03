@@ -129,6 +129,12 @@ show_help: true              # Symbol ? mit Link zu dieser Dokumentation
 
 ### Über HACS (empfohlen)
 
+1. HACS öffnen und nach „Rollladen Zeiten“ suchen.
+2. **Herunterladen** anklicken, Home Assistant **neu starten**.
+3. Einstellungen → Geräte & Dienste → Integration hinzufügen → „Rollladen Zeiten“.
+
+Taucht die Integration in der HACS-Suche nicht auf, füge sie als benutzerdefiniertes Repository hinzu:
+
 1. HACS öffnen → Menü (⋮) → **Benutzerdefinierte Repositories**.
 2. Repository `https://github.com/Reinhard-M/ha-rollladen-zeiten` eintragen, Kategorie **Integration**, hinzufügen.
 3. „Rollladen Zeiten“ in HACS suchen, **Herunterladen**, Home Assistant **neu starten**.
